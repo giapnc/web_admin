@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import {
-  Users,
   Shield,
   Search,
   CheckCircle,
@@ -73,7 +72,7 @@ const AccountManagement = () => {
   }
 
   const filteredUsers = users.filter(user => {
-    const matchesSearch = (user.name || "").toLowerCase().includes(searchTerm.toLowerCase()) || 
+    const matchesSearch = (user.name || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
                          (user.company || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
                          (user.email || "").toLowerCase().includes(searchTerm.toLowerCase())
     const matchesRole = filterRole === "ALL" || user.role === filterRole
@@ -106,14 +105,14 @@ const AccountManagement = () => {
       <div className="filters-card">
         <div className="search-box">
           <Search size={20} color="#6b7280" />
-          <input 
-            type="text" 
-            placeholder="Tìm kiếm theo tên, email, công ty..." 
+          <input
+            type="text"
+            placeholder="Tìm kiếm theo tên, email, công ty..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        
+
         <div className="filter-group">
           <Filter size={18} color="#6b7280" />
           <select value={filterRole} onChange={(e) => setFilterRole(e.target.value)}>
@@ -166,7 +165,7 @@ const AccountManagement = () => {
                 </td>
                 <td>
                   <div className="action-buttons">
-                    <button 
+                    <button
                       className={`btn-action ${user.status === 'Verified' ? 'btn-revoke' : 'btn-approve'}`}
                       onClick={() => toggleVerify(user.id, user.role)}
                     >

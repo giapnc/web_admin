@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Activity, Search, ExternalLink, Database, RefreshCw } from 'lucide-react';
+import { Shield, Activity, Search, ExternalLink, RefreshCw } from 'lucide-react';
 import { adminClient } from '../services/authService';
 import './BlockchainHistory.css';
 

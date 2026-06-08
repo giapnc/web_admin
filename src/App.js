@@ -10,6 +10,7 @@ import LoginScreen from './components/auth/LoginScreen';
 // Auth wrapper component
 function AuthWrapper() {
   const { isAuthenticated, loading } = useAuth();
+  // eslint-disable-next-line no-unused-vars
   const [authMode, setAuthMode] = useState('login');
 
   if (loading) {
