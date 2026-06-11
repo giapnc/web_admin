@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Shield, Activity, Search, ExternalLink, RefreshCw } from "lucide-react"
 import { adminClient } from "../services/authService"
 import "./BlockchainHistory.css"
+import { toast } from "react-toastify"
 
 const BlockchainHistory = () => {
   const [transactions, setTransactions] = useState([])
@@ -96,7 +97,7 @@ const BlockchainHistory = () => {
                   title={tx.id}
                   onClick={() => {
                     navigator.clipboard.writeText(tx.id)
-                    alert("TxHash đã được sao chép!")
+                    toast.success("TxHash đã được sao chép!")
                   }}>
                   {tx.id}
                 </td>
@@ -109,7 +110,7 @@ const BlockchainHistory = () => {
                     title={tx.from}
                     onClick={() => {
                       navigator.clipboard.writeText(tx.from)
-                      alert("Địa chỉ ví đã được sao chép!")
+                      toast.success("Địa chỉ ví đã được sao chép!")
                     }}>
                     {tx.from}
                   </span>

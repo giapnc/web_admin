@@ -12,6 +12,7 @@ import {
 } from "lucide-react"
 import { adminClient } from "../services/authService"
 import "./AccountManagement.css"
+import { toast } from "react-toastify"
 
 const AccountManagement = () => {
   const [users, setUsers] = useState([])
@@ -216,7 +217,7 @@ const AccountManagement = () => {
                       title={user.wallet}
                       onClick={() => {
                         navigator.clipboard.writeText(user.wallet)
-                        alert("Địa chỉ ví đã được sao chép!")
+                        toast.success("Địa chỉ ví đã được sao chép!")
                       }}>
                       {user.wallet
                         ? `${user.wallet.substring(0, 6)}...${user.wallet.substring(38)}`
